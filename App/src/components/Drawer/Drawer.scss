@@ -1,0 +1,44 @@
+.MuiListItem-root.Mui-selected {
+  /* We increase the specificity */
+  color: blue !important;
+}
+
+.scroll-box {
+  -webkit-box-flex: 1 1 100px;
+  -webkit-flex: 1 1 100px;
+  flex: 1 1 100px;
+  background-color: var(--fire-color-sidenav-base);
+  padding-bottom: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.create-chat-room-container {
+  box-shadow: 0 -1px 0 #404854;
+  -webkit-box-flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.exit-button-container {
+  border-top: 1px solid grey;
+  box-shadow: 0 -1px 0 #404854;
+  -webkit-box-flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
