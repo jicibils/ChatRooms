@@ -1,0 +1,89 @@
+.root {
+  display: flex;
+  justify-content: center;
+  background: url("../../assets/img/bg4.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+.root-filter {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+}
+.login-container {
+  .login-main-column {
+    min-height: 100vh;
+    position: relative;
+  }
+  .login-box {
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 15%;
+    width: 30%;
+  }
+  .login-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .login-button {
+    border-color: rgba(255, 0, 0, 0.3);
+    background-color: rgba(109, 25, 25, 0.7);
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 25px;
+  }
+  .button-register {
+    border-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 25px;
+  }
+  .login-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 35px;
+    margin-right: 40px;
+  }
+  .login-input {
+    width: 70%;
+  }
+}
+
+.error-message {
+  color: #d10f0f;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+
+.button-progress-container {
+  margin-top: -27px !important;
+}
+
+.all-width {
+  width: 100%;
+}
+
+@media only screen and (max-width: 880px) {
+  /* For tablets: */
+  .login-container {
+    .login-box {
+      width: 80%;
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+  .login-container {
+    .login-box {
+      width: 95%;
+    }
+  }
+}
