@@ -22,7 +22,6 @@ import AllInboxIcon from "@material-ui/icons/AllInbox";
 import Add from "@material-ui/icons/Add";
 import DrawerContentComponent from "components/Drawer/DrawerContentComponent";
 import { getUserLetter } from "utils/functions";
-import logo from "assets/img/carnerilloLogo.jpg";
 
 import "./Drawer.scss";
 
@@ -89,10 +88,6 @@ const useStyles = makeStyles(theme => ({
   },
   spaceRight: {
     marginRight: 15
-  },
-  carnerilloButton: {
-    color: "#fff",
-    textTransform: "none"
   },
   textChatRoomsButton: {
     fontFamily: "'Google Sans', sans-serif"

@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
   spaceRight: {
     marginRight: 10
   },
-  carnerilloButton: {
+  chatRoomsButton: {
     color: "#fff",
     textTransform: "none"
   },
@@ -100,7 +100,7 @@ export default function HeaderComponent(props) {
           </IconButton>
         )}
         <Button
-          className={classes.carnerilloButton}
+          className={classes.chatRoomsButton}
           onClick={() => (showBackButton ? {} : props.goToDashboard())}
         >
           <Typography className={classes.textChatRoomsButton}>
