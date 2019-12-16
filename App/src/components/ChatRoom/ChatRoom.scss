@@ -1,0 +1,147 @@
+.root-create-chat-room {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+.create-chat-room-container {
+  .create-chat-room-main-column {
+    min-height: 60vh;
+    position: relative;
+    width: 100%;
+  }
+  .create-chat-room-box {
+    height: 320px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 15%;
+  }
+  .create-chat-room-title {
+    font-family: "Google Sans", sans-serif;
+    font-size: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .create-chat-room-form {
+    margin-top: -25px;
+  }
+  .create-chat-room-button {
+    border-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(63, 81, 181, 0.8);
+    color: rgba(0, 0, 0, 0.9);
+    margin-top: 20px;
+  }
+  .create-chat-room-text {
+    font-family: "Google Sans", sans-serif;
+    font-size: 35px;
+    margin-right: 40px;
+  }
+  .create-chat-room-input {
+    width: 70%;
+  }
+  .create-chat-room-water-mark {
+    width: 35%;
+    position: fixed;
+    opacity: 0.2;
+    z-index: 99;
+    top: 25%;
+  }
+}
+
+.error-message {
+  color: #d10f0f;
+  font-weight: bold;
+  font-family: "Google Sans", sans-serif;
+}
+
+.button-progress-container {
+  margin-top: -27px !important;
+}
+
+.all-width {
+  width: 100%;
+}
+
+.chat-container-box {
+  width: 100%;
+
+  .messages-container {
+    height: 67%;
+  }
+  .message-box-author {
+    width: 100%;
+    background-color: #c3c3c3;
+  }
+  .message-box {
+    width: 100%;
+    background-color: #001fff5e;
+  }
+  .message-author {
+    padding: 5px;
+  }
+
+  .message-date {
+    font-size: 10px;
+  }
+
+  .message-content {
+    padding: 5px;
+  }
+
+  .write-zone-container {
+    height: 8%;
+  }
+}
+
+.scroll-box {
+  -webkit-box-flex: 1 1 100px;
+  -webkit-flex: 1 1 100px;
+  flex: 1 1 100px;
+  background-color: var(--fire-color-sidenav-base);
+  padding-bottom: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@media only screen and (max-width: 960px) {
+  .create-chat-room-container {
+    .create-chat-room-water-mark {
+      width: 0%;
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  /* For tablets: */
+  .create-chat-room-container {
+    .create-chat-room-box {
+      width: 80%;
+    }
+    .create-chat-room-water-mark {
+      width: 0%;
+      opacity: 1;
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+  .create-chat-room-container {
+    .create-chat-room-box {
+      width: 95%;
+    }
+    .create-chat-room-water-mark {
+      width: 0%;
+      opacity: 1;
+    }
+  }
+}
