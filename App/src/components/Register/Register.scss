@@ -1,0 +1,100 @@
+.root-register {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.12);
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+.register-container {
+  .register-main-column {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+  }
+  .register-box {
+    height: 520px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 15%;
+  }
+  .register-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .register-form {
+    margin-top: -25px;
+  }
+  .register-button {
+    border-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(63, 81, 181, 0.8);
+    color: rgba(0, 0, 0, 0.9);
+    margin-top: 20px;
+  }
+  .register-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    margin-right: 40px;
+  }
+  .register-input {
+    width: 70%;
+  }
+  .register-water-mark {
+    width: 35%;
+    position: fixed;
+    opacity: 0.2;
+    z-index: 99;
+    top: 25%;
+  }
+}
+
+.error-message {
+  color: #d10f0f;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.button-progress-container {
+  margin-top: -27px !important;
+}
+
+.all-width {
+  width: 100%;
+}
+
+@media only screen and (max-width: 960px) {
+  .register-container {
+    .register-water-mark {
+      width: 0%;
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  /* For tablets: */
+  .register-container {
+    .register-box {
+      width: 80%;
+    }
+    .register-water-mark {
+      width: 0%;
+      opacity: 1;
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+  .register-container {
+    .register-box {
+      width: 95%;
+    }
+    .register-water-mark {
+      width: 0%;
+      opacity: 1;
+    }
+  }
+}
