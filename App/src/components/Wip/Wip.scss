@@ -1,0 +1,25 @@
+.Wip {
+  text-align: center;
+}
+
+.Wip-logo {
+  animation: Wip-logo-spin infinite 60s linear;
+  height: 30vmin;
+  pointer-events: none;
+}
+
+.Wip-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes Wip-logo-spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(5000deg);
+  }
+}
