@@ -1,0 +1,24 @@
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "emotion",
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "src": "./src",
+          "routes": "./src/routes",
+          "common": "./src/common",
+          "reduxActions": "./src/redux",
+          "components": "./src/components",
+          "containers": "./src/containers",
+          "utils": "./src/utils",
+          "api": "./src/api",
+          "assets": "./src/assets"
+        }
+      }
+    ]
+  ]
+}
