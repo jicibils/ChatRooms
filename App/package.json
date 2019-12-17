@@ -1,5 +1,5 @@
 {
-  "name": "my-react-boilerplate",
+  "name": "chat-rooms",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,24 +10,22 @@
     "date-fns": "^2.0.1",
     "immutability-helper": "^3.0.1",
     "lodash": "^4.17.11",
-    "material-table": "^1.36.1",
     "notistack": "^0.8.8",
     "owasp-password-strength-test": "^1.3.0",
     "react": "^16.8.6",
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.8.6",
-    "react-image-crop": "^3.0.11",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
     "react-router-with-props": "^0.1.1",
     "react-scripts": "3.0.1",
     "react-select": "^3.0.4",
     "react-spinners": "^0.5.13",
-    "react-transition-group-v2": "^2.4.0",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
+    "socket.io-client": "^2.3.0",
     "styled-components": "^4.3.2"
   },
   "engines": {
@@ -36,25 +34,10 @@
   },
   "scripts": {
     "start-dev": "webpack-dev-server --config=webpack.config.js --env.development=true",
-    "start": "node server.js",
     "build-dev": "webpack --config=webpack.config.js --env.development=true",
     "build-prod": "webpack --config=webpack.config.js --env.production=true",
-    "build": "webpack -p --config=webpack.config.js --env.production=true",
-    "heroku-postbuild": "npm run build"
+    "build": "webpack -p --config=webpack.config.js --env.production=true"
   },
-  "keywords": [
-    "react",
-    "redux",
-    "webpack",
-    "starter",
-    "boilerplate",
-    "authToken",
-    "auth",
-    "token",
-    "bcrypt",
-    "babel",
-    "react-router"
-  ],
   "eslintConfig": {
     "extends": "react-app"
   },
