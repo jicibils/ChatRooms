@@ -37,7 +37,7 @@ import { bindActionCreators } from "redux";
 const fieldSpec = () => ({
   message: {
     name: "Message",
-    placeholder: "Write a message",
+    placeholder: "Write a message (Try '/stock')",
     validations: { required: true }
   }
 });
