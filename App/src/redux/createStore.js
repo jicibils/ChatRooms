@@ -19,8 +19,9 @@ export const store = createStore(
   {},
   compose(
     applyMiddleware(thunk),
-    applyMiddleware(createLogger())
-    // applyMiddleware(createLogger({ predicate: (getState, action) => false }))
+    // applyMiddleware(createLogger())
+
+    applyMiddleware(createLogger({ predicate: (getState, action) => false }))
   )
 );
 export const persistor = persistStore(store);
