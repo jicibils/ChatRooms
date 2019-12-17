@@ -6,7 +6,6 @@ const path = require("path");
 
 const Login = require("./modules/login/router.js");
 const Register = require("./modules/register/router.js");
-const User = require("./modules/user/router.js");
 const ChatRoom = require("./modules/chatRoom/router.js");
 const Messages = require("./modules/messages/router.js");
 
@@ -37,8 +36,6 @@ app.use("/login", Login);
 
 app.use("/register", Register);
 
-app.use("/user", User);
-
 app.use("/chat-room", ChatRoom);
 
 app.use("/messages", Messages);
@@ -50,3 +47,30 @@ app.listen(process.env.PORT || config.serverPort, () =>
       config.serverPort}!`
   )
 );
+
+// Socket Server Engine
+
+var server = require("http").Server(app);
+var io = require("socket.io")(server);
+
+server.listen(config.socketPort, function() {
+  let host = server.address().address;
+  let port = server.address().port;
+  console.log(
+    "\n---------------------------- [API-Chat-Rooms] Chat Server Running ----------------------------\n"
+  );
+  console.log(
+    "[API-Chat-Rooms] " + " Chat server running at http://" + host + ":" + port
+  );
+
+  io.on("connection", socket => {
+    console.log("Socket Connected: ", socket.id);
+
+    socket.on("message", data => {
+      console.log("TCL: data", data);
+      socket.broadcast.emit("message", {
+        data
+      });
+    });
+  });
+});

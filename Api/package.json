@@ -31,6 +31,7 @@
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "pg": "^7.8.1",
-    "pg-promise": "^8.5.6"
+    "pg-promise": "^8.5.6",
+    "socket.io": "^2.3.0"
   }
 }
