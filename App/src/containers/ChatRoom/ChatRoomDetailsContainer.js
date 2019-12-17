@@ -23,7 +23,7 @@ import size from "lodash/size";
 import map from "lodash/map";
 
 import { addParticipantToChatRoom } from "api/services/chat-room";
-import { getMessages, createMessage } from "api/services/messages";
+import { getMessages, createMessage, callBot } from "api/services/messages";
 
 // REDUX
 import { updateRoomsReducer } from "reduxActions/reducers/roomsReducer";
@@ -128,6 +128,26 @@ class ChatRoomDetailsContainer extends React.Component {
     const { selectedRoom, message } = this.state;
     const { user, enqueueSnackbar, closeSnackbar } = this.props;
     const messageData = { roomId: selectedRoom.id, user, message };
+    if (message === "/stock") {
+      return callBot(messageData)
+        .then(res => {
+          if (get(res, "data.type") !== AUTHENTICATION_TYPES.SUCCESS) {
+            queueSetState(this, { isSending: false });
+            return errorSnackBar(
+              get(res, "data.message", "Error!"),
+              enqueueSnackbar,
+              closeSnackbar
+            );
+          }
+          const newMessage = keyBy(res.data.message, "id");
+          this.props.updateMessagesReducer(newMessage);
+          queueSetState(this, { isSending: false, message: "" });
+        })
+        .catch(err => {
+          queueSetState(this, { isSending: false });
+          console.log("err", err);
+        });
+    }
     createMessage(messageData)
       .then(res => {
         if (get(res, "data.type") !== AUTHENTICATION_TYPES.SUCCESS) {

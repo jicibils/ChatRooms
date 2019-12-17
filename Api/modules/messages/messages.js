@@ -17,7 +17,6 @@ const createMessage = async (req, res) => {
       } else {
         res.status(200).json({
           type: "Success",
-          message: "Message Sent!",
           message: results.rows
         });
       }
@@ -48,7 +47,32 @@ const getMessages = async (req, res) => {
   }
 };
 
+const callBot = async (req, res) => {
+  try {
+    const { roomId, user, message } = req.body;
+    // TODO: Get the csv param, parse it and return the real answer
+    const botMessage = {
+      id: -1,
+      room_id: roomId,
+      sender_name: "RabbitMQ",
+      sender_id: -1,
+      message: "APPL.US quote is $93.42 per share",
+      created: new Date()
+    };
+    res.status(200).json({
+      type: "Success",
+      message: [botMessage]
+    });
+  } catch (err) {
+    console.log("TCL: callBot -> err", err);
+    res.status(200).json({
+      type: "callBotFailure",
+      message: "Oops something went wrong, Try Again"
+    });
+  }
+};
 module.exports = {
   createMessage,
-  getMessages
+  getMessages,
+  callBot
 };
