@@ -1,5 +1,6 @@
 import { REHYDRATE } from "redux-persist";
 import get from "lodash/get";
+import { emitMessage } from "src/chat";
 
 const LOAD = "messages/LOAD";
 const UPDATE = "messages/UPDATE";
@@ -51,7 +52,7 @@ const load = messages => ({
   }
 });
 
-const update = message => ({
+export const updateMessage = message => ({
   type: UPDATE,
   payload: {
     message
@@ -70,7 +71,8 @@ const requestError = error => ({
 });
 
 export const updateMessagesReducer = (message = {}) => dispatch => {
-  dispatch(update(message));
+  emitMessage(message);
+  dispatch(updateMessage(message));
 };
 
 export const loadMessagesReducer = (messages = {}) => dispatch => {

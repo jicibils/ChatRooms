@@ -119,15 +119,7 @@ const RenderAccessRoom = props => {
 };
 
 const RenderRoom = props => {
-  const {
-    selectedRoom,
-    user,
-    isOwnerOrParticipant,
-    toggleShowRoom,
-    isJoining,
-    onAddParticipant,
-    isSending
-  } = props;
+  const { selectedRoom, user } = props;
   return (
     <Grid item xs={12} container justify="center">
       <Card className={"chat-container-box"}>
@@ -160,8 +152,10 @@ const RenderMessagesZone = props => {
       </Typography>
     );
 
-  return map(messages, message => (
-    <RenderMessage {...props} message={message}></RenderMessage>
+  return map(messages, (message, index) => (
+    <Fragment key={index}>
+      <RenderMessage {...props} message={message}></RenderMessage>
+    </Fragment>
   ));
 };
 

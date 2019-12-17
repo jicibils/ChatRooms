@@ -18,6 +18,9 @@ import { AUTHENTICATION_TYPES } from "utils/types";
 import get from "lodash/get";
 import find from "lodash/find";
 import keyBy from "lodash/keyBy";
+import slice from "lodash/slice";
+import size from "lodash/size";
+import map from "lodash/map";
 
 import { addParticipantToChatRoom } from "api/services/chat-room";
 import { getMessages, createMessage } from "api/services/messages";
@@ -73,10 +76,7 @@ class ChatRoomDetailsContainer extends React.Component {
     const selectedRoom = find(this.props.rooms, { id: +roomId });
     if (!selectedRoom) return;
     const messages = keyBy((await getMessages({ roomId })).data, "id");
-    console.log(
-      "TCL: ChatRoomDetailsContainer -> loadRoom -> messages",
-      messages
-    );
+
     this.props.loadMessagesReducer(messages);
     queueSetState(this, {
       selectedRoom,
@@ -195,6 +195,14 @@ class ChatRoomDetailsContainer extends React.Component {
 
   render() {
     if (this.state.isLoading) return <Spinner />;
+    const { messages } = this.props;
+    const messagesSize = size(messages);
+
+    const messagesToShow =
+      messagesSize > 50
+        ? slice(map(messages), messagesSize - 50)
+        : this.props.messages;
+
     return (
       <ChatRoomDetailsComponent
         selectedRoom={this.state.selectedRoom}
@@ -206,7 +214,7 @@ class ChatRoomDetailsContainer extends React.Component {
         onAddParticipant={this.onAddParticipant}
         isJoining={this.state.isJoining}
         isSending={this.state.isSending}
-        messages={this.props.messages}
+        messages={messagesToShow}
         fieldSpec={this.state.fieldSpec}
         message={this.state.message}
         onHandleChange={this.handleChange}
